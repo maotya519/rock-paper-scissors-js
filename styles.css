@@ -97,3 +97,27 @@ header {
     color: rgb(177, 43, 43);
     font-weight: bold;
 }
+
+.result_modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+    }
+
+    .result_modal-content{
+    background-color: white;
+    width: 90%;
+    height: 600px;
+    margin: 30% auto;
+    text-align: center;
+    border-radius: 10px;
+    }
+.result_modal_title {
+    padding: 40px 0 0 0;
+}
