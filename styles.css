@@ -20,12 +20,14 @@ header {
 .content-area {
     width: 90%;
     height: 160px;
+    color: #333;
     background: #fff;
     border-radius: 10px;
     margin: 30px auto 0 auto;
 }
 .tx {
     font-weight: bold;
+    display: inline-block;
     padding: 10px;
 }
 
@@ -47,7 +49,6 @@ header {
 }
 .btn-container {
     display: flex;
-
 }
 .btn-area {
     background: #00E676;
@@ -57,6 +58,10 @@ header {
     text-align: center;
     margin: 40px auto;
     box-shadow: 0 8px 8px rgb(1, 146, 61);
+}
+.hide-area {
+    background: rgb(0, 119, 62);
+    pointer-events: none;
 }
 .btn-area:active {
     position: relative;
@@ -120,4 +125,20 @@ header {
     }
 .result_modal_title {
     padding: 40px 0 0 0;
+}
+.cpu-image {
+    width: 50%;
+    height: 160px;
+    text-align :center;
+    position: absolute;
+}
+.janken{
+    width: 30%;
+    height: 100px;
+    right: 20%;
+    top: 19%;
+    display: none;
+}
+.user-image {
+    display: none;
 }

@@ -15,7 +15,7 @@
     <div id="modal" class="modal">
         <div class="modal-content">
           <div class="modal-body">
-            <h1 class="modal-count-tx">1</h1>
+            <h1 class="modal-count-tx">3</h1>
           </div>
         </div>
       </div>
@@ -30,10 +30,13 @@
 
     <div class="contents">
         <div class="content-area cpu-area">
-            <p class="tx">CPU:</p>
+            <p class="tx cpu-tx">CPU:</p>
+            <img src="" class="cpu-image" id="cpu_image_icon">
+            <img src="" class="cpu-image janken">
         </div>
         <div class="content-area you-area">
             <p class="tx">YOU:</p>
+            <img src="" class="cpu-image user-image" >
         </div>
     </div>
     <div class="result">
@@ -42,16 +45,18 @@
         <div class="result-tx-area"><p class="result-tx"></p></div>
     </div>
     <div class="btn-container">
-        <div class="btn-area">
-            <p class="btn-tx"><i class="far fa-hand-rock fa-2x fa-fw"></i></p>
+        <div class="btn-area " data-index-id= 1 id="goo">
+            <p class="btn-tx" ><i class="far fa-hand-rock fa-2x fa-fw"></i></p>
         </div>
-        <div class="btn-area">
-            <p class="btn-tx"><i class="far fa-hand-peace fa-2x fa-fw"></i></p>
+        <div class="btn-area" data-index-id= 2 id="tyoki">
+            <p class="btn-tx" ><i class="far fa-hand-peace fa-2x fa-fw"></i></p>
         </div>
-        <div class="btn-area">
+        <div class="btn-area " data-index-id= 3 id="par">
             <p class="btn-tx"><i class="far fa-hand-paper fa-2x fa-fw"></i></p>
         </div>
     </div>
     <p class="contact-tx">あなたが次に出すものをお選びください。</p>
+
+    <script src="./script.js"></script>
 </body>
 </html>
