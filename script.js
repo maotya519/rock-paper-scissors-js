@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
                 // 1　グー　2　チョキ 3　パー
                 // console.log( you_hand + 'が押されました');
                 let cpu_janken_random = Math.floor(Math.random()* 3 + 1 );
-
+                if ( you_hand == 1 ) {
                 // ユーザーがグーを出した時
                 if ( you_hand == 1  &&  cpu_janken_random  == 2 ) {
                     console.log( '勝ち' );
@@ -120,6 +120,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
                         document.getElementById('cpu_image_icon').setAttribute('src', './images/girl-un.png');
                     }
                 }
+            } else if ( you_hand == 2 ) {
                 // ユーザーが猪木を出した時
                 if ( you_hand == 2  &&  cpu_janken_random  == 3 ) {
                     console.log( '勝ち' );
@@ -143,6 +144,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
                         document.getElementById('cpu_image_icon').setAttribute('src', './images/girl-un.png');
                     }
                 }
+            } else {
                 // ユーザーがパーを出したとき
                 if ( you_hand == 3  &&  cpu_janken_random  == 1 ) {
                     console.log( '勝ち' );
@@ -166,6 +168,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
                         document.getElementById('cpu_image_icon').setAttribute('src', './images/girl-un.png');
                     }
                 }
+            }
 
                 function cpu_action() {
 
