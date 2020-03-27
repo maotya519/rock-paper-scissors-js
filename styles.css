@@ -71,7 +71,7 @@ header {
     line-height: 70px;
 
 }
-.modal {
+/* .modal {
     display: none;
     position: fixed;
     z-index: 1;
@@ -96,7 +96,7 @@ header {
     }
     .modal-count-tx {
         font-size: 2em;
-    }
+    } */
 .contact-tx {
     text-align:center;
     color: rgb(177, 43, 43);

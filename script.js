@@ -4,18 +4,15 @@ let result = 0; //勝ち変数
 let　changeCharacter = Math.floor( Math.random()* 2 + 1 );
 switch ( changeCharacter ) {
     case 1:
-        console.log( 'boy' );
+
         document.getElementById('cpu_image_icon').setAttribute('src', './images/boy.png');
         break;
     case 2:
-        console.log( 'girl' );
         document.getElementById('cpu_image_icon').setAttribute('src', './images/girl.png');
         break;
     }
 
-// for ( let i = 0, i =< 3, i++ ) {
 
-// }
 
 document.addEventListener('DOMContentLoaded', ()=> {
 
@@ -25,7 +22,6 @@ document.addEventListener('DOMContentLoaded', ()=> {
             let you_hand;
 
             if ( index.dataset.indexId == 1 ) {
-                // console.log( 'goo' );
                 countDown();
                 you_hand = index.dataset.indexId;
                 jankenBattle( you_hand );
@@ -38,7 +34,6 @@ document.addEventListener('DOMContentLoaded', ()=> {
                 setTimeout( showCommand, 5000 );
 
             } else if ( index.dataset.indexId == 2) {
-                // console.log( 'tyoki');
                 countDown();
                 you_hand = index.dataset.indexId;
                 jankenBattle( you_hand );
@@ -49,7 +44,6 @@ document.addEventListener('DOMContentLoaded', ()=> {
 
                 setTimeout( showCommand, 5000 );
             } else {
-                // console.log( 'par');
                 countDown();
                 you_hand= index.dataset.indexId;
                 jankenBattle( you_hand );
@@ -71,14 +65,20 @@ document.addEventListener('DOMContentLoaded', ()=> {
                 let id = setInterval(function() {
                     sec--;
                     console.log( sec );
-                    document.querySelector('.modal').style.display = 'block';
-                    document.querySelector('.modal-count-tx').textContent = sec;
+
                     if ( sec === 0 ) {
                         console.log( 'finish ');
-                        document.querySelector('.modal').style.display = 'none';
                         document.querySelector('.janken').style.display = 'none';
                         document.querySelector('.user-image').style.display = 'none';
+                        if ( changeCharacter == 1 ) {
+                            console.log( '男の子' );
+                            document.getElementById('cpu_image_icon').setAttribute('src', './images/boy.png');
+                        } else {
+                            console.log( '女の子' );
+                            document.getElementById('cpu_image_icon').setAttribute('src', './images/girl.png');
+                        }
                         clearTimeout( id );
+
                         sec = 4;
                     }
                 },1000);
@@ -96,8 +96,76 @@ document.addEventListener('DOMContentLoaded', ()=> {
                 // console.log( you_hand + 'が押されました');
                 let cpu_janken_random = Math.floor(Math.random()* 3 + 1 );
 
-                // console.log ( you_hand );
-
+                // ユーザーがグーを出した時
+                if ( you_hand == 1  &&  cpu_janken_random  == 2 ) {
+                    console.log( '勝ち' );
+                    console.log( changeCharacter );
+                    if ( changeCharacter == 1 ) {
+                        document.getElementById('cpu_image_icon').setAttribute('src', './images/boy-angry.png');
+                    } else {
+                        document.getElementById('cpu_image_icon').setAttribute('src', './images/girl-angry.png');
+                    }
+                } else if ( you_hand == 1 && cpu_janken_random == 1) {
+                    console.log ( 'あいこ' );
+                    if ( changeCharacter == 1 ) {
+                        document.getElementById('cpu_image_icon').setAttribute('src', './images/boy.png');
+                    } else {
+                        document.getElementById('cpu_image_icon').setAttribute('src', './images/girl.png');
+                    }
+                } else {
+                    console.log( '負け' );
+                    if ( changeCharacter == 1 ) {
+                        document.getElementById('cpu_image_icon').setAttribute('src', './images/boy-good.png');
+                    } else {
+                        document.getElementById('cpu_image_icon').setAttribute('src', './images/girl-un.png');
+                    }
+                }
+                // ユーザーが猪木を出した時
+                if ( you_hand == 2  &&  cpu_janken_random  == 3 ) {
+                    console.log( '勝ち' );
+                    if ( changeCharacter == 1 ) {
+                        document.getElementById('cpu_image_icon').setAttribute('src', './images/boy-angry.png');
+                    } else {
+                        document.getElementById('cpu_image_icon').setAttribute('src', './images/girl-angry.png');
+                    }
+                } else if ( you_hand == 2 && cpu_janken_random == 2) {
+                    console.log ( 'あいこ' );
+                    if ( changeCharacter == 1 ) {
+                        document.getElementById('cpu_image_icon').setAttribute('src', './images/boy.png');
+                    } else {
+                        document.getElementById('cpu_image_icon').setAttribute('src', './images/girl.png');
+                    }
+                } else {
+                    console.log( '負け' );
+                    if ( changeCharacter == 1 ) {
+                        document.getElementById('cpu_image_icon').setAttribute('src', './images/boy-good.png');
+                    } else {
+                        document.getElementById('cpu_image_icon').setAttribute('src', './images/girl-un.png');
+                    }
+                }
+                // ユーザーがパーを出したとき
+                if ( you_hand == 3  &&  cpu_janken_random  == 1 ) {
+                    console.log( '勝ち' );
+                    if ( changeCharacter == 1 ) {
+                        document.getElementById('cpu_image_icon').setAttribute('src', './images/boy-angry.png');
+                    } else {
+                        document.getElementById('cpu_image_icon').setAttribute('src', './images/girl-angry.png');
+                    }
+                } else if ( you_hand == 3 && cpu_janken_random == 3) {
+                    console.log ( 'あいこ' );
+                    if ( changeCharacter == 1 ) {
+                        document.getElementById('cpu_image_icon').setAttribute('src', './images/boy.png');
+                    } else {
+                        document.getElementById('cpu_image_icon').setAttribute('src', './images/girl.png');
+                    }
+                } else {
+                    console.log( '負け' );
+                    if ( changeCharacter == 1 ) {
+                        document.getElementById('cpu_image_icon').setAttribute('src', './images/boy-good.png');
+                    } else {
+                        document.getElementById('cpu_image_icon').setAttribute('src', './images/girl-un.png');
+                    }
+                }
 
                 function cpu_action() {
 
